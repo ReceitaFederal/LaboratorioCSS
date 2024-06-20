@@ -31,3 +31,7 @@
 * Determina se a face posterior do elemento é visível quando está virada para o usuário.
   - Conclusão:
     - A propriedade backface-visibility: hidden é essencial para animações 3D suaves e limpas, especialmente em elementos que giram no espaço 3D, como cartões giratórios, pois evita que o conteúdo indesejado apareça durante a rotação.
+---
+# Propriedade "FILTER: BLUER"
+* É utilizada para aplicar um efeito de desfoque (blur) a um elemento HTML.
+* Quando você define filter: blur(5px);, isso significa que o elemento será desfocado com um raio de 5 pixels.
