@@ -1,0 +1,59 @@
+/* INICIO FOCUS */
+.container-foco {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+.foco-inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg,#ff0057,#2196f3);
+    text-align: center;
+}
+
+.foco-inicio h2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 8em;
+    cursor: pointer;
+    flex-wrap: wrap; /* Permite que o span quebre linha*/
+}
+
+.foco-inicio h2 span {
+    position: relative;
+    filter: blur(5px);
+    padding: 0 5px;
+    transition: 0.5s;
+}
+
+.foco-inicio h2 span:hover {
+    filter: blur(0px);
+}
+
+.foco-inicio h2 span i {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+}
+
+.foco-inicio h1 {
+    text-align: center;
+    position: absolute;
+    top: 20%;
+}
+
+.link-video a {
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    color: #0c1022;
+    text-decoration: none;
+}
+/* FIM FOCUS */

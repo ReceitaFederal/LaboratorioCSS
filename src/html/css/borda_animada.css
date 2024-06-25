@@ -1,0 +1,95 @@
+/* INICIO BORDER ANIMATION */
+
+.titulo-bordaanimada h1{
+    text-align: center;
+    font-size: 3rem;
+}
+.texto-bordaanimada p {
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container-bordaanimada {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    gap: 30px; /* Espaço entre os cards*/
+}
+
+.box1,
+.box2 {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: rgba(0,0,0,0.75);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+/* Duplicando pois quero cores diferentes */
+.box1::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(transparent,transparent,transparent,#d400d4);
+    animation: animate 4s linear infinite;
+    animation-delay: -2s;
+}
+.box2::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(transparent,transparent,transparent,#ff0062);
+    animation: animate 4s linear infinite;
+    animation-delay: -2s;
+}
+
+.box1::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(transparent,transparent,transparent,#00ccff);
+    animation: animate 4s linear infinite;
+}
+.box2::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(transparent,transparent,transparent,#19f305);
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.box1 span,
+.box2 span {
+    position: absolute;
+    inset: 5px;
+    border-radius: 16px;
+    background: #0c1022;
+    z-index: 1;
+}
+
+.box1 h2,
+.box2 h2 {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: 10em;
+}
+/* FIM BORDER ANIMATION */
