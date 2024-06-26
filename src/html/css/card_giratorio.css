@@ -6,7 +6,8 @@
 }
 
 .wrapper1,
-.wrapper2 {
+.wrapper2,
+.wrapper3 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,6 +113,8 @@
     position: absolute;
     bottom: 20px;
     text-align: center;
+    left: 30%;
+    right: 30%;
 }
 
 .list_wrapper a:hover {

@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.container-input {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /*meio da tela*/
+    flex-direction: column; /* deixando em forma de coluna, um abaixo do outo*/
+    gap: 30px; /* Espaço entre os inputs*/
+    background: #1d2b3a; /* Redefinindo cor de fundo */
+}
+
+.titulo h2 {
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.link-video a {
+    text-align: center;
+    color: #00dfc4;
+}
+
+.inputBox {
+    position: relative;
+    width: 250px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px; /*ajustou o tamanho do input*/
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: #1d2b3a; /* Colocando cor de fundo do input*/
+    border-radius: 5px; /* Arredondando a borda do input*/
+    outline: none; /*Ao clicar no campo, ele não seleciona inteiro, apenas coloca o cursor no local de forma fluida*/
+    color: #fff; /* Cor da letra dentro do campo*/
+    font-size: 1em; /*Tamanho da fonte*/
+    transition: 0.5s; /* Transição do input con delay*/
+}
+
+.inputBox span {
+    position: absolute; /* Esse e o left faz com que o nome entre dentro do campo*/
+    left: 0;
+    padding: 10px; /* Espaçando dentro do campo */
+    pointer-events: none; /* Deixa que ""primeiro nome" fixo, mesmo quando começa a escrever dentro*/
+    font-size: 1em; /* Ajustando tamanho da forte do "primeiro nome"*/
+    color: rgba(255, 255, 255, 0.25); /* Ajustando a cor da escrita "Primeiro nome"*/
+    text-transform: uppercase; /* Deixando a escrita maiuscula */
+    transition: 0.5s; /* Transição para quando aperdar ele ter um "delay"*/
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+    color: #00dfc4; /* Quando comeca a escrever, a escrita altera a cor*/
+    transform: translateX(10px) translateY(-7px); /*A escrita é arrastada para cima e consequentemente diminui o tamanho(dimensões)*/
+    font-size: 0.80em; /* Quando clicado, a escrita vai ser se adequar ao tamno da fonte que colocamos */
+    padding: 0 10px; /* Na teoria a ecrita vai ficar exatamente na linha quando clicado*/
+    background: #1d2b3a; /* Complemento do padding, ao inves dele se estabelecer em cima da linha do campo, ele vai se sobresair, causando o efeito */
+    border-left: 1px solid #00dfc4; /* Tras aquele | entre a escrita - lado direito */
+    border-right: 1px solid #00dfc4; /* A mesma coisa, porem do lado direito */
+    letter-spacing: 0.2em; /*Espaçamento entre as letras */
+}
+
+.inputBox:nth-child(4) input:valid ~ span, /* para mexer segundo input: Utimo nome, usamos o nth-child(numero do que queremos)*/
+.inputBox:nth-child(4) input:focus ~ span { /* Podemos perceber que o visual do primeiro para o segundo esta diferente, por causa desse código*/
+    background: #00dfc4; /* A caixa cheia fica com cor */
+    color: #1d2b3a; /* Cor da letra */
+    border-radius: 2px;
+}
+
+.inputBox input:valid ,
+.inputBox input:focus {
+    border:  1px solid #00dfc4; /* Colocando cor na borda quado o campo é clicado*/
+}
