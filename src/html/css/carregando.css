@@ -28,18 +28,91 @@
     border-radius: 50%; /* Transformando um quadrado em um circulo */
     border: 4px solid transparent;
     border-top: 4px solid #24ecff; /* Parte de cima */
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate { /*Validando a alimação, fazendo om que ela de a volta em 360°*/
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .animacao .ring:before {
     content: '';
     position: absolute;
+    top: 12px; /*Criando a bola na ponta*/
+    right: 12px; /*Criando a bola na ponta*/
+    border-radius: 50%; /*Criando a bola na ponta*/
     width: 15px;
     height: 15px;
+    background: #24ecff;
+    box-shadow: 0 0 0 5px #24ecff33, /* Criando o efeito no circulo sombra, pode perceber que tem varias camadas, comecando uma for mais forte e depois ficando mais fraca*/
+    0 0 0 10px #24ecff22,
+    0 0 0 20px #24ecff11, /*Usar o 5, 10 e 20px para aumentar o tamanho ou diminuir */
+    0 0 20px #24ecff,
+    0 0 50px #24ecff; 
+}
+
+.animacao .ring:nth-child(2) {
+    animation: animate2 4s linear infinite;
+    animation-delay: -1s;
+    border-top: 4px solid transparent;
+    border-left: 4px solid #93ff2d;
+}
+
+.animacao .ring:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: initial;
+    bottom: 12px; /*Mudando a direção da ponta da bolinha*/
+    left: 12px; /*Mudando a direção da ponta da bolinha*/
+    border-radius: 50%; 
+    width: 15px;
+    height: 15px;
+    background: #93ff2d;
+    box-shadow: 0 0 0 5px #93ff2d33, /* Criando o efeito no circulo sombra, pode perceber que tem varias camadas, comecando uma for mais forte e depois ficando mais fraca*/
+    0 0 0 10px #93ff2d22,
+    0 0 0 20px #93ff2d11, /*Usar o 5, 10 e 20px para aumentar o tamanho ou diminuir */
+    0 0 20px #93ff2d,
+    0 0 50px #93ff2d; 
+}
+
+@keyframes animate2 { /*Validando a animação da direita (verde/amarelo), fazendo om que ela de a volta em 360°, porem ela vai ir em uma posição diferente*/
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .animacao .ring:nth-child(3) { /* Vamos mexer na terceira div ring, no caso a ultima */
+    animation: animate2 4s linear infinite;
+    animation-delay: -3s;
     position: absolute;
     top: -66.66px;
+    border-top: 4px solid transparent;
+    border-left: 4px solid #e41cf8;
+}
+
+.animacao .ring:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    top: initial;
+    bottom: 12px; /*Mudando a direção da ponta da bolinha*/
+    left: 12px; /*Mudando a direção da ponta da bolinha*/
+    border-radius: 50%; 
+    width: 15px;
+    height: 15px;
+    background: #e41cf8;
+    box-shadow: 0 0 0 5px #e41cf833, /* Criando o efeito no circulo sombra, pode perceber que tem varias camadas, comecando uma for mais forte e depois ficando mais fraca*/
+    0 0 0 10px #e41cf822,
+    0 0 0 20px #e41cf811, /*Usar o 5, 10 e 20px para aumentar o tamanho ou diminuir */
+    0 0 20px #e41cf8,
+    0 0 50px #e41cf8; 
 }
 
 .animacao p {
@@ -50,3 +123,20 @@
     bottom: -80px; /* Ajustando onde a escrita vai ficar */
     letter-spacing: 0.15em;
 } 
+
+.titulo h2 {
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    position: absolute;
+    bottom: 600px;
+    left: 565px;
+}
+
+.titulo a {
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 620px;
+    left: 650px;
+}
