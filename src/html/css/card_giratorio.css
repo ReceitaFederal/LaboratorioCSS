@@ -66,8 +66,7 @@
     font-weight: 500;
 }
 
-.card_descricao,
-.foco_descricao {
+.descricao{
     margin: 10px 0;
     font-size: 1em;
     color: #555;
