@@ -9,7 +9,8 @@
 .wrapper2,
 .wrapper3,
 .wrapper4,
-.wrapper5 {
+.wrapper5,
+.wrapper6 {
     display: flex;
     justify-content: center;
     align-items: center;
