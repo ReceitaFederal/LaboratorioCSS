@@ -1,28 +1,9 @@
-export class FundoAnimado extends HTMLElement{
+import { ComponenteBase } from "../../bibliotecas/ultima/componente_base.js";
+
+export class FundoAnimado extends ComponenteBase{
     
-    constructor(){
-        super();
-
-        console.log ("Constructor do fundo_animado.js");
-
-        console.log(`URL do card_giratorio.js: ${import.meta.url}`)
-        fetch('./componentes/fundo_animado/fundo_animado.html').then(resultado => {
-            
-
-            resultado.text().then(texto_pagina => {                            
-
-                let template = document.createElement('template');
-
-                template.innerHTML = texto_pagina;
-
-                this.appendChild(template.content.cloneNode(true));
-                
-                this.dispatchEvent(new CustomEvent("carregou"));                
-            });
-        });
-
-        
-
+    constructor(){        
+        super({templateURL:"fundo_animado.html", shadowDOM:false}, import.meta.url);        
     }
 }
 customElements.define('br-fundo', FundoAnimado);

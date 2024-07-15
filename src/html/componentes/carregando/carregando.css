@@ -26,22 +26,22 @@
     height: 150px;
     margin: -30px;
     border-radius: 50%; /* Transformando um quadrado em um circulo */
-    border: 4px solid transparent;
-    border-top: 4px solid #24ecff; /* Parte de cima */
+    border: 4px solid transparent; /* Define uma borda transparente de 4 pixels */
+    border-top: 4px solid #24ecff; /* Parte de cima */ /* Define a cor da borda superior como #24ecff */
     animation: animate 4s linear infinite;
 }
 
 @keyframes animate { /*Validando a alimação, fazendo om que ela de a volta em 360°*/
     0% {
-        transform: rotate(0deg);
+        transform: rotate(0deg); /* No início da animação, está em 0 graus (posição inicial) */
     }
     100% {
-        transform: rotate(360deg);
+        transform: rotate(360deg); /* No final da animação,faz uma rotação completa de 360 graus */
     }
 }
 
-.animacao .ring:before {
-    content: '';
+.animacao .ring:before { /* Adiciona um elemento decorativo antes do conteúdo */
+    content: ''; /* Insere um conteúdo vazio (necessário para criar o pseudo-elemento) */
     position: absolute;
     top: 12px; /*Criando a bola na ponta*/
     right: 12px; /*Criando a bola na ponta*/
@@ -53,13 +53,13 @@
     0 0 0 10px #24ecff22,
     0 0 0 20px #24ecff11, /*Usar o 5, 10 e 20px para aumentar o tamanho ou diminuir */
     0 0 20px #24ecff,
-    0 0 50px #24ecff; 
+    0 0 50px #24ecff; /* Cria um efeito de brilho ao redor do círculo */
 }
 
-.animacao .ring:nth-child(2) {
+.animacao .ring:nth-child(2) { /* Aplica estilos ao segundo filho do elemento com a classe 'ring' */
     animation: animate2 4s linear infinite;
     animation-delay: -1s;
-    border-top: 4px solid transparent;
+    border-top: 4px solid transparent; /* Define a borda superior como transparente */
     border-left: 4px solid #93ff2d;
 }
 
