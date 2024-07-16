@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(45deg,#ff0057,#2196f3);
+    background: linear-gradient(45deg,#ff0057,#2196f3); /* Aplica um gradiente de fundo de 45 graus, indo de #ff0057 (rosa) para #2196f3 (azul) */
     text-align: center;
 }
 
@@ -21,24 +21,24 @@
     align-items: center;
     color: #fff;
     font-size: 8em;
-    cursor: pointer;
-    flex-wrap: wrap; /* Permite que o span quebre linha*/
+    cursor: pointer; /* Muda o cursor para um ponteiro quando o usuário passa o mouse sobre o texto */
+    flex-wrap: wrap; /* Permite que o span quebre linha*/ /* Permite que os elementos filhos quebrem para a próxima linha, se necessário */
 }
 
 .foco-inicio h2 span {
     position: relative;
-    filter: blur(5px);
+    filter: blur(5px); /* Aplica um desfoque de 5 pixels ao texto */
     padding: 0 5px;
-    transition: 0.5s;
+    transition: 0.5s; /* Define uma transição suave de 0.5 segundos para todas as propriedades que mudarem */
 }
 
 .foco-inicio h2 span:hover {
-    filter: blur(0px);
+    filter: blur(0px); /* Remove o desfoque quando o usuário passa o mouse sobre o texto */
 }
 
 .foco-inicio h2 span i {
     position: absolute;
-    inset: 0;
+    inset: 0; /* Define as propriedades top, right, bottom e left como 0, ocupando todo o espaço do contêiner pai */
     background: transparent;
 }
 
