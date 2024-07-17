@@ -1,28 +1,9 @@
-export class Distorcao extends HTMLElement{
+import { ComponenteBase } from "../../bibliotecas/ultima/componente_base.js";
+
+export class Distorcao extends ComponenteBase{
     
-    constructor(){
-        super();
-
-        console.log ("Constructor do distorcao_de_particula.js");
-
-        console.log(`URL do card_giratorio.js: ${import.meta.url}`)
-        fetch('./componentes/distorcao_de_particula/distorcao_de_particula.html').then(resultado => {
-            
-
-            resultado.text().then(texto_pagina => {                            
-
-                let template = document.createElement('template');
-
-                template.innerHTML = texto_pagina;
-
-                this.appendChild(template.content.cloneNode(true));
-                
-                this.dispatchEvent(new CustomEvent("carregou"));                
-            });
-        });
-
-        
-
+    constructor(){        
+        super({templateURL:"distorcao.html", shadowDOM:false}, import.meta.url);        
     }
 }
 customElements.define('br-distorcao', Distorcao);
