@@ -1,0 +1,162 @@
+.tudo {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #607d8b;
+}
+
+.container-xicara {
+    position: relative;
+    top: 50px;
+}
+
+.xicara {
+    position: relative;
+    width: 280px;
+    height: 300px;
+    background: linear-gradient(to right, #f9f9f9,#d9d9d9); /* Aplica um gradiente de cor de esquerda para a direita */
+    border-bottom-left-radius: 45%; /* Deu uma curva no lado esqurdo da xicara */ /* Arredonda o canto inferior esquerdo da xícara */
+    border-bottom-right-radius: 45%; /* Mesma coisa porém do lado direito */ /* Arredonda o canto inferior direito da xícara */
+}
+
+.topo {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to right, #f9f9f9,#d9d9d9); /* Aplica um gradiente de cor de esquerda para a direita */
+    border-radius: 50%;
+}
+
+.circulo { /* Parte de cima da xicara*/
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: calc(100% - 20px); /* Define a largura do círculo, subtraindo 20px da largura total da xícara */
+    height: 50px; /* Define a altura do círculo */
+    background: linear-gradient(to left, #f9f9f9,#d9d9d9); /* Aplica um gradiente de cor da direita para a esquerda */
+    border-radius: 50%;
+    box-sizing: border-box; /* Inclui o padding e a borda na largura e altura do círculo */
+    overflow: hidden; /* Esconde qualquer conteúdo que exceda os limites do círculo */
+}
+
+.cha { /* Criando o chá*/
+    position: absolute;
+    top: 20px; /* Posiciona o chá 20px abaixo da parte superior do círculo */
+    left: 0; /* Alinha o chá à esquerda */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#c57e65,#e28462); /* Aplica um gradiente de cor para simular o chá */
+    border-radius: 50%;  /* Arredonda completamente o chá */
+}
+
+.alca {
+    position: absolute;
+    right: -70px; /* Colocando ela para a direita */ /* Posiciona a alça 70px à direita da borda da xícara */
+    top: 40px; /* Lugar/posição que vai ficar */ /* Posiciona a alça 40px abaixo da parte superior da xícara */
+    width: 160px;
+    height: 180px;
+    border: 25px solid #dcdcdc; /* Aplica uma borda de 25px em torno da alça */
+    border-left: 25px solid transparent; /* Deixando a parte da esquerda(do quadrado) transparente*/ /* Torna a borda esquerda transparente */
+    border-bottom: 25px solid transparent; /* DeixandO a parte de baixo transparente*/  /* Torna a borda inferior transparente */
+    border-radius: 50%; /* Arredondando o quadrado */ /* Arredonda completamente a alça */
+    transform: rotate(42deg); /* Rotacionando a Alça*/ /* Rotaciona a alça em 42 graus */
+}
+
+.prato {
+    position: absolute;
+    bottom: -50px;
+    left: 50%; /* Posiciona o prato 50px abaixo da parte inferior da xícara */
+    transform: translateX(-50%); /* Ajusta a posição do prato para que ele fique centralizado */
+    width: 500px;
+    height: 200px;
+    background: linear-gradient(to right, #f9f9f9,#e7e7e7); /* Aplica um gradiente de cor de esquerda para a direita */
+    border-radius: 50%; /* Arredonda completamente o prato */
+    box-shadow: 0 35px 35px rgba(0,0,0,0.2); /* Adiciona uma sombra ao prato */
+}
+
+/* Sombremento do prato */
+.prato::before {
+    content: '';
+    position: absolute; /* Define a posição absoluta do sombremento */
+    top: 10px ; /* Define a posição superior */
+    left: 10px; /* Define a posição à esquerda */
+    right: 10px; /* Define a posição à direita */
+    bottom: 10px; /* Define a posição inferior */
+    border-radius: 50%; /* Arredonda completamente o sombremento */
+    background: linear-gradient(to left,#f9f9f9,#e7e7e7); /* Aplica um gradiente de cor de direita para a esquerda */
+}
+
+.prato::after { /* Sombreamento na parte de baico da xicara */
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;  
+    background: radial-gradient(rgba(0,0,0,0.2) 25%, transparent, transparent); /* Aplica um gradiente radial para simular a sombra */
+    border-radius: 50%; /* Arredonda completamente o sombremento */
+}
+
+.vapor {
+    position: relative;
+    display: flex;
+    z-index: 1; /* Define a camada do vapor acima de outros elementos */
+    padding: 0 20px; /* Define o padding horizontal do vapor */
+}
+
+.vapor span {
+    position: relative;
+    bottom: 50px; /* Posiciona o vapor 50px abaixo do ponto de origem */
+    display: block; /* Define o display do vapor como bloco */
+    margin: 0 2px 50px; /* Define a margem ao redor do vapor */
+    min-width: 8px; /* Define a largura mínima do vapor */
+    height: 120px; /* Define a altura do vapor */
+    background: #fff;
+    border-radius: 50%; /* Arredonda completamente o vapor */
+    animation: animate 5s linear infinite; /* Aplica a animação ao vapor */
+    opacity: 0; /* Define a opacidade inicial do vapor */
+    filter: blur(8px); /* Aplica um efeito de desfoque ao vapor */
+    animation-delay: calc(var(--i) * -0.5s); /* Define o atraso da animação com base na variável CSS personalizada */
+}
+
+@keyframes animate {
+    0%{
+        transform: translateY(0) scaleX(1); /* Define a posição inicial e escala do vapor */
+        opacity: 0; /* Define a opacidade inicial do vapor */
+    }
+    15%{
+        opacity: 1; /* Aumenta a opacidade do vapor */
+    }
+    50%{
+        transform: translateY(-150px) scaleX(5); /* Move o vapor para cima e aumenta a escala horizontal */
+    }
+    95%{
+        opacity: 0; /* Reduz a opacidade do vapor */
+    }
+    100%{
+        transform: translateY(-300px) scaleX(10); /* Move o vapor mais para cima e aumenta ainda mais a escala horizontal */
+    }
+}
+
+.titulo h2 {
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    position: absolute;
+    bottom: 600px;
+    left: 40%;
+    top: 10%;
+}
+
+.titulo a {
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 620px;
+    left: 48%;
+    top: 20%;
+}

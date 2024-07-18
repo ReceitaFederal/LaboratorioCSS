@@ -34,16 +34,16 @@
     left: 0;
     padding: 10px 0 5px;
     color: rgba(255,255,255,0.5);
-    text-transform: uppercase;
-    pointer-events: none;
-    letter-spacing: 0.1em;
+    text-transform: uppercase; /* Transforma o texto para letras maiúsculas */
+    pointer-events: none; /* Desabilita a interação do usuário com o <span> */
+    letter-spacing: 0.1em; /* Define o espaçamento entre letras como 0.1em */
     transition: 0.5s;
 }
 
 .inputbox input:valid ~ span,
 .inputbox input:focus ~ span {
     color: #2196f3;
-    transform: translateY(-16px);
+    transform: translateY(-16px); /* Move o <span> 16 pixels para cima */
     font-size: 0.65em;
 }
 
@@ -54,7 +54,7 @@
     width: 100%;
     height: 2px;
     background: #fff;
-    overflow: hidden;
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do <i> */
 }
 
 .inputbox i::before {
@@ -75,9 +75,9 @@
 
 @keyframes animate {
     0%{
-        background-position-x: 0;
+        background-position-x: 0; /* Define a posição inicial do gradiente de fundo */
     } 
     100%{
-        background-position-x: 250px;
+        background-position-x: 250px; /* Define a posição final do gradiente de fundo, criando um efeito de movimento */
     }
 }

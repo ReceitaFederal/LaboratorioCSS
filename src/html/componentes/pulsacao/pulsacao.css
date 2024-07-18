@@ -1,0 +1,76 @@
+.container-pulsando {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0a3643;
+}
+
+.pulsando { /*Criando o circulo cental da animação */ 
+    position: relative;
+    width: 200px;
+    height: 200px;
+    box-shadow: inset 0 0 40px #12b9ff, /* Adiciona uma sombra interna com cor #12b9ff */
+    0 0 50px #12b9ff; /* Adiciona uma sombra externa com cor #12b9ff */
+    border-radius: 50%; /* Arredonda as bordas para formar um círculo */
+    border: 1px solid #12b9ff;
+    background: url(../img/earth2.jpg); /* Define uma imagem de fundo */
+    background-size: cover; /* Redimensiona a imagem de fundo para cobrir todo o elemento */
+    animation: animateEarth 20s linear infinite; /* Adiciona uma animação infinita de 20 segundos */
+}
+
+.pulsando span { /* Criando as camadas de pulsação*/
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%,-50%); /* Ajusta a posição para o centro exato do contêiner pai */
+    background: transparent;
+    border: 1px solid #12b9ff;
+    animation: animate 6s linear infinite;
+    animation-delay: calc(var(--i) * -1s); /* Define um atraso de animação baseado na variável CSS `--i` */
+    border-radius: 50%;
+}
+
+@keyframes animate { /* Animação para as camadas de pulsação */
+    0% {
+        width: 200px; /* Define a largura inicial */
+        height: 200px; /* Define a altura inicial */
+        opacity: 1; /* Define a opacidade inicial */
+    }
+    50% {
+        opacity: 1; /* Mantém a opacidade */
+    }
+    100% {
+        width: 600px; /* Define a largura final */
+        height: 600px; /* Define a altura final */
+        opacity: 0; /* Define a opacidade final */
+    }
+}
+
+@keyframes animateEarth { /* Animação para o movimento de fundo do círculo central */
+    0% {
+        background-position-x: 0px; /* Posição inicial do fundo */
+    }
+    100% {
+        background-position-x: 360px; /* Posição final do fundo */
+    }
+}
+
+.titulo h2 {
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+    position: absolute;
+    bottom: 600px;
+    left: 565px;
+    top: 10%;
+}
+
+.titulo a {
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 620px;
+    left: 670px;
+    top: 19%;
+}

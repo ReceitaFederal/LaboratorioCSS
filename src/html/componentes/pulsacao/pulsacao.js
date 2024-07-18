@@ -1,28 +1,9 @@
-export class Pulsacao extends HTMLElement{
+import { ComponenteBase } from "../../bibliotecas/ultima/componente_base.js";
+
+export class Pulsacao extends ComponenteBase{
     
-    constructor(){
-        super();
-
-        console.log ("Constructor do pulsacao.js");
-
-        console.log(`URL do pulsacao.js: ${import.meta.url}`)
-        fetch('./componentes/pulsacao/pulsacao.html').then(resultado => {
-            
-
-            resultado.text().then(texto_pagina => {                            
-
-                let template = document.createElement('template');
-
-                template.innerHTML = texto_pagina;
-
-                this.appendChild(template.content.cloneNode(true));
-                
-                this.dispatchEvent(new CustomEvent("carregou"));                
-            });
-        });
-
-        
-
+    constructor(){        
+        super({templateURL:"pulsacao.html", shadowDOM:false}, import.meta.url);        
     }
 }
 customElements.define('br-pulsa', Pulsacao);

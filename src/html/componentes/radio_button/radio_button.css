@@ -21,12 +21,12 @@
     cursor: pointer;
 }
 
-.radio + .radio {
-    margin-left: 20px;
+.radio + .radio { 
+    margin-left: 20px; /* Adiciona uma margem à esquerda de 20px entre elementos consecutivos com a classe .radio */
 }
 
 .radio input[type="radio"] {
-    display: none;
+    display: none; /* Oculta o input do tipo rádio */
 }
 
 .radio span {
@@ -44,15 +44,15 @@
     height: 8px;
     width: 8px;
     background: #00aeef;
-    display: block;
+    display: block; /* Exibe o pseudo-elemento como um bloco */
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0); /* Ajusta a posição para centralizar exatamente no meio e escala inicialmente a 0 */
     border-radius: 50%;
-    transition: 300ms ease-in-out 0s;
+    transition: 300ms ease-in-out 0s; /* Define a transição suave ao longo de 300ms */
 }
 
 .radio input[type="radio"]:checked ~ span:after {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1); /* Quando o rádio está selecionado, escala o pseudo-elemento para 1 (tamanho original) */
 }

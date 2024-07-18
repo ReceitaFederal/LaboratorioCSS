@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppons,' sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.complemento {
+    background: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.box {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    transform-style: preserve-3d; /* Habilita transformações 3D dentro deste contêiner */
+}
+
+.box div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; /* Habilita transformações 3D dentro deste elemento */
+    animation: animate 30s linear infinite; /* Aplica uma animação que dura 30 segundos, é linear e se repete infinitamente */
+}
+
+@keyframes animate {
+    0%{
+        transform: perspective(1500px) rotateX(0deg); /* No início, aplica uma perspectiva de 1500px e não rotaciona no eixo X */
+    }
+    100% {
+        transform: perspective(1000px) rotateX(360deg); /* No final, aplica uma perspectiva de 1000px e uma rotação completa de 360 graus no eixo X */
+    }
+}
+
+.box div span {
+    position: absolute;
+    inset: 0; /* Define as margens internas para 0, ocupando todo o espaço disponível */
+    transform: rotateX(calc(var(--i) * 15deg )); /* Rotaciona cada span no eixo X baseado no valor da variável CSS --i multiplicado por 15 graus */
+}
+
+.box div span::before {
+    content: 'Estágio 3D';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    color: #fff;  /*Primeira cor*/
+    text-transform: uppercase;
+    font-size: 8em;
+    font-weight: 800;
+    -webkit-text-stroke: 2px #000; /*Borda da letra */ /* Aplica uma borda preta ao texto */
+    text-shadow: 0 0 50px rgba(0,0,0,0.5); /* Aplica uma sombra ao texto */
+}
+
+.box div span:nth-child(3n+2):before { 
+    color: #79c7ffdd; /*Segunda cor*/  /* Define a cor do texto para o segundo elemento da sequência */
+}
+
+.box div span:nth-child(3n+3):before {
+    color: #ffa9ffdd; /*Terceira cor*/ /* Define a cor do texto para o terceiro elemento da sequência */
+}
