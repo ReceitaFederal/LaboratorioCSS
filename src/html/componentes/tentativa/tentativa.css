@@ -87,10 +87,10 @@
     border:  1px solid #00dfc4; /* Colocando cor na borda quado o campo é clicado*/
 }
 
-.input-box textarea {
+/* .input-box textarea {
     resize: vertical;
     min-height: 100px;
-}
+} */
 
 .formulario h2 {
     color: #000;
