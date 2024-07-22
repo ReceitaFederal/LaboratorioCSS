@@ -1,28 +1,8 @@
-export class Input extends HTMLElement{
+import { ComponenteBase } from "../../bibliotecas/ultima/componente_base.js";
+export class Input extends ComponenteBase{
     
-    constructor(){
-        super();
-
-        console.log ("Constructor do input.js");
-
-        console.log(`URL do card_giratorio.js: ${import.meta.url}`)
-        fetch('./componentes/input/input.html').then(resultado => {
-            
-
-            resultado.text().then(texto_pagina => {                            
-
-                let template = document.createElement('template');
-
-                template.innerHTML = texto_pagina;
-
-                this.appendChild(template.content.cloneNode(true));
-                
-                this.dispatchEvent(new CustomEvent("carregou"));                
-            });
-        });
-
-        
-
+    constructor(){        
+        super({templateURL:"./input.html", shadowDOM:false}, import.meta.url);        
     }
 }
 customElements.define('br-input', Input);

@@ -11,16 +11,16 @@
     position: relative;
     width: 300px;
     height: 300px;
-    transform-style: preserve-3d;
+    transform-style: preserve-3d; /* Mantém os filhos do elemento em um contexto 3D */
     animation: animate 10s linear infinite;
 }
 
 @keyframes animate {
     0% {
-        transform: rotateX(-30deg) rotateY(0deg);
+        transform: rotateX(-30deg) rotateY(0deg); /* No início da animação, o cubo está inclinado -30 graus no eixo X e 0 graus no eixo Y */
     } 
     100% {
-        transform: rotateX(-30deg) rotateY(360deg);
+        transform: rotateX(-30deg) rotateY(360deg); /* No final da animação, o cubo está inclinado -30 graus no eixo X e completa uma rotação de 360 graus no eixo Y */
     }
 }
 
@@ -33,14 +33,14 @@
     transform-style: preserve-3d;
 }
 
-.cubo div span { /* Criando o cubo */
+.cubo div span { /* Cria as faces do cubo */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(#151515,#00ec00);   
-    transform: rotateY(calc(90deg * var(--i))) translateZ(150px)/* 300(width) /(dividido) 2 = 150 */ ;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px)/* 300(width) /(dividido) 2 = 150 */ /* Rotaciona a face em Y e a posiciona em Z para criar as seis faces do cubo */;
 }
 
 .topo { /* Criando tipo de um sombreado logo a baixo do cubo*/

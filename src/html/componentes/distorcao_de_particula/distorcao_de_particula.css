@@ -18,8 +18,8 @@
     font-size: 4em;
     font-weight: 900;
     color: #fff;
-    z-index: 1;
-    overflow: hidden;
+    z-index: 1; /* Define a ordem de empilhamento como 1, colocando o cabeçalho à frente de elementos com z-index menor */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do cabeçalho */
 }
 
 .container-distorcao h2::before {
@@ -35,10 +35,11 @@
 
 @keyframes animate {
     0% {
-        left: 110%;
+        left: 110%; /* Início da animação, posicionado fora do lado direito do cabeçalho */
     }
     100% {
-        left: -20%; /* Causando o efeito de "sumir" */
+        left: -20%; /* Causando o efeito de "sumir" */ /* Final da animação, posicionado fora do lado esquerdo do cabeçalho, criando o efeito de "sumir" */
+
     }
 }
 .container-distorcao h2 span {
@@ -51,8 +52,8 @@
    left: 0;
    width: 100%;
    height: 100%;
-   object-fit: cover;
-   z-index: 2;
-   pointer-events: none;
-   mix-blend-mode: screen;
+   object-fit: cover; /* Redimensiona o vídeo para cobrir todo o contêiner, preservando a proporção do vídeo */
+   z-index: 2; /* Define a ordem de empilhamento como 2, colocando o vídeo à frente de elementos com z-index menor */
+   pointer-events: none; /* Desabilita a interação do usuário com o vídeo */
+   mix-blend-mode: screen; /* Aplica o modo de mistura "screen", combinando o vídeo com os elementos abaixo dele */
 }

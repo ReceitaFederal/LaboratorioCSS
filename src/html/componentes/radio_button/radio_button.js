@@ -1,28 +1,9 @@
-export class RadioButton extends HTMLElement{
+import { ComponenteBase } from "../../bibliotecas/ultima/componente_base.js";
+
+export class RadioButton extends ComponenteBase{
     
-    constructor(){
-        super();
-
-        console.log ("Constructor do radio_button.js");
-
-        console.log(`URL do radio_button.js: ${import.meta.url}`)
-        fetch('./componentes/radio_button/radio_button.html').then(resultado => {
-            
-
-            resultado.text().then(texto_pagina => {                            
-
-                let template = document.createElement('template');
-
-                template.innerHTML = texto_pagina;
-
-                this.appendChild(template.content.cloneNode(true));
-                
-                this.dispatchEvent(new CustomEvent("carregou"));                
-            });
-        });
-
-        
-
+    constructor(){        
+        super({templateURL:"radio_button.html", shadowDOM:false}, import.meta.url);        
     }
 }
 customElements.define('br-radiobutton', RadioButton);

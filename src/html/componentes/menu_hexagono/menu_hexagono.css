@@ -22,7 +22,7 @@
 }
 
 .container-hexagono .hexagonoArea.last {
-    transform: translateY(-45px);
+    transform: translateY(-45px); /* Move o elemento 45 pixels para cima */
 }
 
 .container-hexagono .hexagonoArea .hexagono {
@@ -30,12 +30,12 @@
     width: 220px;
     height: 250px;
     margin: 0 10px;
-    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%); /* Cria a forma de um hexágono */
     background: deeppink;
-    display: flex;
+    display: flex; /* Define um layout flexível para o hexágono */
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; /* Alinha os itens em uma coluna */
     cursor: pointer;
     transition: 1s;
 }
@@ -49,13 +49,13 @@
 
 .container-hexagono .hexagonoArea .hexagono h3 {
     text-transform: uppercase;
-    font-weight: 600;
-    margin-top: 10px;
+    font-weight: 600; /* Define a espessura da fonte como 600 (semi-negrito) */
+    margin-top: 10px; /* Adiciona uma margem superior de 10 pixels */
     font-size: 17px;
-    letter-spacing: 1px;
+    letter-spacing: 1px; 
 }
 
 .container-hexagono .hexagonoArea .hexagono:hover { /* Quando passamos o mouse esse mude de cor e diminua*/
     background: deepskyblue;
-    transform: scale(0.8);
+    transform: scale(0.8); /* Reduz o tamanho do hexágono para 80% ao passar o mouse */
 }

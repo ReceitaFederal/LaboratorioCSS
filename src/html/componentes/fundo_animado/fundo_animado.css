@@ -1,0 +1,67 @@
+.container-fundo {
+    min-height: 100vh; /*100% da tela*/
+    background: #0c192c;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /*Vai esconder tudo que estiver fora do container, no caso o scroll que apareceu */
+}
+
+.titulo h1 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    font-family: sans-serif;
+    letter-spacing: 1px; /* Define o espaçamento entre as letras como 1 pixel */
+    word-spacing: 2px; /* Define o espaçamento entre as palavras como 2 pixels */
+    color: #fff;
+    font-size: 40px;
+    text-transform: uppercase; /* Transforma o texto para maiúsculas */
+    transform: translate(2%, 300px); /* Move o elemento 2% para a direita e 300 pixels para baixo */
+    
+}
+
+.titulo a {
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 20px;
+    transform: translate(2%, 300px); /* Move o elemento 2% para a direita e 300 pixels para baixo */
+    display: flex;
+    
+}
+
+.bolhas {
+    position: absolute;
+    display: flex;
+}
+
+.bolhas span {
+    width: 30px;
+    height: 30px;
+    background: #e5ff00; /* Até aqui criamos um elemento que no caso foi um quadrado*/
+    margin: 0 4px;
+    border-radius: 50%; /* Arredonda as bordas do elemento, tornando-o um círculo */
+    box-shadow: 0 0 0 10px #e5ff0044, /* Cria um efeito de sombra ao redor do círculo */
+    0 0 50px #e5ff00, /* Adiciona uma sombra com raio de 50 pixels */
+    0 0 100px #e5ff00; /* Adiciona uma sombra com raio de 100 pixels */
+    animation: animar calc(150s / var(--i)) linear infinite; /*Vai dividir em 30 segundos a quantidade de itens no caso --i*/
+    /* Define uma animação chamada 'animar' que dura 150 segundos divididos pelo valor da variável --i, com velocidade constante e repetição infinita */
+}
+
+@keyframes animar { /*Ele vai animar de baixo até em cima */
+    0% {
+        transform: translateY(100vh) scale(0); /* No início da animação, o elemento está fora da tela (100% da altura da viewport) e escalado para 0 (invisível) */
+    }
+    100% {
+        transform: translateY(-10vh) scale(1); /* No final da animação, o elemento está ligeiramente acima do topo da tela (-10% da altura da viewport) e escalado para 1 (tamanho original) */
+    }
+}
+.bolhas span:nth-of-type(even) { /*Vai pegar os números pares*/
+    background: #2dc3ff;
+    box-shadow: 0 0 0 10px #e5ff0044, /* Adiciona uma sombra ao redor do círculo */
+    0 0 50px #2dc3ff, /* Adiciona uma sombra com raio de 50 pixels com a cor #2dc3ff */
+    0 0 100px #2dc3ff; /* Adiciona uma sombra com raio de 100 pixels com a cor #2dc3ff */
+}
