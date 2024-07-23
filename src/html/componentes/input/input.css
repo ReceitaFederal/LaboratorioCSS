@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh; /*meio da tela*/
-    flex-direction: column; /* deixando em forma de coluna, um abaixo do outo*/
+    flex-direction: column; /* deixando em forma de coluna, um abaixo do outro*/
     gap: 30px; /* Espaço entre os inputs*/
     background: #1d2b3a; /* Redefinindo cor de fundo */
 }

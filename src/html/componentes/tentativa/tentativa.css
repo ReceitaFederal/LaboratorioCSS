@@ -38,40 +38,45 @@
 .input-box {
     position: relative;
     width: 250px;
-}
-
-.input-box span {
-    position: absolute; /* Esse e o left faz com que o nome entre dentro do campo*/
-    left: 0;
-    padding: 10px; /* Espaçando dentro do campo */
-    pointer-events: none; /* Deixa que ""primeiro nome" fixo, mesmo quando começa a escrever dentro*/
-    font-size: 1em; /* Ajustando tamanho da forte do "primeiro nome"*/
-    color: rgba(255, 255, 255, 0.25); /* Ajustando a cor da escrita "Primeiro nome"*/
-    text-transform: uppercase; /* Deixando a escrita maiuscula */
-    transition: 0.5s; /* Transição para quando aperdar ele ter um "delay"*/
+    margin-bottom: 20px;
 }
 
 .input-box input {
     width: 100%;
-    padding: 10px; /*ajustou o tamanho do input*/
+    padding: 12px; /*ajustou o tamanho do input*/
     border: 1px solid rgba(255, 255, 255, 0.25);
-    background: #1d2b3a; /* Colocando cor de fundo do input*/
+    background: #a1a5e9; /* Colocando cor de fundo do input*/
     border-radius: 5px; /* Arredondando a borda do input*/
     outline: none; /*Ao clicar no campo, ele não seleciona inteiro, apenas coloca o cursor no local de forma fluida*/
-    color: #fff; /* Cor da letra dentro do campo*/
+    color: #2e2d2d; /* Cor da letra dentro do campo*/
     font-size: 1em; /*Tamanho da fonte*/
     transition: 0.5s; /* Transição do input con delay*/
 }
 
+.input-box span {
+    position: absolute; /* Esse e o left faz com que o nome entre dentro do campo*/
+    left: 1px;
+    top: 2px;
+    padding: 9px; /* Espaçando dentro do campo */
+    pointer-events: none; /* Deixa que "primeiro nome" fixo, mesmo quando começa a escrever dentro*/
+    font-size: 1em; /* Ajustando tamanho da forte do "primeiro nome"*/
+    color: rgba(0, 0, 0, 0.25); /* Ajustando a cor da escrita "Primeiro nome"*/
+    text-transform: uppercase; /* Deixando a escrita maiuscula */
+    transition: 0.5s; /* Transição para quando aperdar ele ter um "delay"*/
+    background: #a1a5e9;
+}
+
 .input-box input:valid ~ span,
 .input-box input:focus ~ span {
-    color: #00dfc4; /* Quando comeca a escrever, a escrita altera a cor*/
+    color: #000000; /* Quando comeca a escrever, a escrita altera a cor*/
     transform: translateX(10px) translateY(-7px); /*A escrita é arrastada para cima e consequentemente diminui o tamanho(dimensões)*/
     font-size: 0.80em; /* Quando clicado, a escrita vai ser se adequar ao tamno da fonte que colocamos */
     padding: 0 10px; /* Na teoria a ecrita vai ficar exatamente na linha quando clicado*/
-    background: #1d2b3a; /* Complemento do padding, ao inves dele se estabelecer em cima da linha do campo, ele vai se sobresair, causando o efeito */
+    background: #a1a5e9; /* Complemento do padding, ao inves dele se estabelecer em cima da linha do campo, ele vai se sobresair, causando o efeito */
     border-left: 1px solid #00dfc4; /* Tras aquele | entre a escrita - lado direito */
     border-right: 1px solid #00dfc4; /* A mesma coisa, porem do lado direito */
+    border-top: 1px solid transparent; /* Linha superior transparente */
+    border-bottom: 1px solid transparent; /* Linha inferior transparente */
     letter-spacing: 0.2em; /*Espaçamento entre as letras */
 }
 
@@ -82,9 +87,19 @@
     border-radius: 2px;
 }
 
+.input-box:nth-child(6) input:valid ~ span, /* para mexer segundo input: Utimo nome, usamos o nth-child(numero do que queremos)*/
+.input-box:nth-child(6) input:focus ~ span { /* Podemos perceber que o visual do primeiro para o segundo esta diferente, por causa desse código*/
+    background: #00dfc4; /* A caixa cheia fica com cor */
+    color: #1d2b3a; /* Cor da letra */
+    border-radius: 2px;
+}
+
 .input-box input:valid ,
 .input-box input:focus {
-    border:  1px solid #00dfc4; /* Colocando cor na borda quado o campo é clicado*/
+    border-left: 1px solid #00dfc4;  /* Apenas as linhas laterais */
+    border-right: 1px solid #00dfc4; /* Apenas as linhas laterais */
+    border-top: 1px solid #00dfc4;
+    border-bottom: 1px solid #00dfc4;
 }
 
 /* .input-box textarea {
@@ -124,7 +139,7 @@ button::after {
     position: absolute;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, #ff0057, #2196f3);
+    background: linear-gradient(45deg, #bf70df, #7d47d3);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
