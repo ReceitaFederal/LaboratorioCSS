@@ -203,3 +203,63 @@ button:hover {
 button:focus {
     animation: pulse 1.5s infinite;
 }
+
+.input-box2 {
+    position: relative;
+    margin-bottom: 20px;
+    width: 300px;
+}
+
+.input-box2 input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    font-size: 1em;
+    transition: 0.4s;
+    z-index: 1;
+    position: relative;
+    background: transparent;
+}
+
+.input-box2 span {
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    pointer-events: none;
+    transition: 0.4s;
+    font-size: 1.3em;
+    color: #aaa;
+}
+
+.input-box2 input:focus { /* Colocando cor na borda do input */
+    border-color: #00dfc4;
+}
+
+.input-box2 input:valid ~ span,
+.input-box2 input:focus ~ span { /* Animação do nome, quando clicado ele tranfere para cima*/
+    color: #00dfc4;
+    transform: translateY(-10px) translateY(-7px);
+    background: #2b2e4a;
+    padding: 0 5px;
+    font-size: 1.2em;
+    letter-spacing: 0.2em;
+}
+
+.input-highlight { /* A linha quando clicar no campo */
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    height: 2px;
+    background: #4d504f;
+    border-radius: 2px;
+    transition: 0.4s;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.input-box2 input:focus ~ .input-highlight {
+    transform: scaleX(1);
+}
