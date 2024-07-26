@@ -231,6 +231,7 @@ button:focus {
     transition: 0.4s;
     font-size: 1.3em;
     color: #aaa;
+    z-index: 1; /* Garantindo que o span fique acima */
 }
 
 .input-box2 input:focus { /* Colocando cor na borda do input */
