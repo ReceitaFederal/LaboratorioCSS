@@ -14,7 +14,7 @@
     0 0 50px #12b9ff; /* Adiciona uma sombra externa com cor #12b9ff */
     border-radius: 50%; /* Arredonda as bordas para formar um círculo */
     border: 1px solid #12b9ff;
-    background: url(../img/earth2.jpg); /* Define uma imagem de fundo */
+    background: url(../../img/earth2.jpg); /* Define uma imagem de fundo */
     background-size: cover; /* Redimensiona a imagem de fundo para cobrir todo o elemento */
     animation: animateEarth 20s linear infinite; /* Adiciona uma animação infinita de 20 segundos */
 }
