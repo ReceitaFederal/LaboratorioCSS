@@ -1,0 +1,80 @@
+.container-mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #f0f0f0;
+}
+
+.mapa {
+    position: relative;
+    width: 800px;
+    height: 700px;
+    background-size: cover;
+    border: 2px solid #ccc;
+}
+
+/* Estilo das Siglas dos Estados  */
+.estado-sudeste {
+    position: absolute;
+    font-weight: bold; /*Define o texto das siglas como negrito*/
+    color: #fff;
+    background-color: rgba(241, 104, 24, 0.7); /*Define a cor de fundo das siglas como preto com 70% de opacidade.*/
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+/* Efeito de Hover nas Siglas dos Estados */
+.estado-sudeste:hover {
+    transform: scale(1.5); /*Aumenta a escala das siglas para 1,5 vezes o tamanho original quando o mouse está sobre elas.*/
+    z-index: 10; /*Eleva o z-index das siglas para 10, garantindo que elas fiquem acima de outros elementos*/
+}
+
+/* :after para Mostrar o Nome Completo do Estado */
+.estado-sudeste::after {
+    content: attr(data-name); /*Utiliza o valor do atributo data-nome como conteúdo do pseudo-elemento*/
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%); /*justa o posicionamento para centralizar o pseudo-elemento*/
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0; /*Define a opacidade inicial como 0, tornando-o invisível*/
+    transition: opacity 0.3s ease; /*Define uma transição suave para a opacidade*/
+    white-space: nowrap; /*Impede que o texto quebre em várias linhas*/
+    font-size: 11px;
+}
+
+/* Efeito de Hover para Mostrar o Nome Completo do Estado */
+.estado-sudeste:hover::after {
+    opacity: 1; /*Define a opacidade como 1, tornando o pseudo-elemento visível quando o mouse está sobre a sigla.*/
+}
+
+
+/* Posições Específicas dos Estados */
+/* Sudeste */
+#SP {
+    top: 458px;
+    left: 484px;
+}
+
+#RJ {
+    top: 456px;
+    left: 580px;
+    padding: 2px;
+}
+
+#ES {
+    top: 413px;
+    left: 620px;
+    padding: 1px;
+}
+
+#MG {
+    top: 395px;
+    left: 550px;
+}
