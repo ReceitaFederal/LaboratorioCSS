@@ -20,20 +20,61 @@
     position: absolute;
     font-weight: bold; /*Define o texto das siglas como negrito*/
     color: #fff;
+    background-color: rgba(219, 58, 98, 0.7); /*Define a cor de fundo das siglas como preto com 70% de opacidade.*/
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    border-radius: 20%;
+}
+
+.estado-sul {
+    position: absolute;
+    font-weight: bold; /*Define o texto das siglas como negrito*/
+    color: #fff;
     background-color: rgba(241, 104, 24, 0.7); /*Define a cor de fundo das siglas como preto com 70% de opacidade.*/
     padding: 5px;
     cursor: pointer;
     transition: transform 0.3s ease, z-index 0.3s ease;
+    border-radius: 20%;
 }
 
+.estado-centro-oeste {
+    position: absolute;
+    font-weight: bold; /*Define o texto das siglas como negrito*/
+    color: #fff;
+    background-color: rgba(90, 38, 235, 0.7); /*Define a cor de fundo das siglas como preto com 70% de opacidade.*/
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    border-radius: 20%;
+}
+
+.estado-norte {
+    position: absolute;
+    font-weight: bold; /*Define o texto das siglas como negrito*/
+    color: #fff;
+    background-color: rgba(18, 148, 35, 0.7); /*Define a cor de fundo das siglas como preto com 70% de opacidade.*/
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    border-radius: 20%;
+}
+
+
 /* Efeito de Hover nas Siglas dos Estados */
-.estado-sudeste:hover {
+.estado-sudeste:hover,
+.estado-sul:hover,
+.estado-centro-oeste:hover,
+.estado-norte:hover {
     transform: scale(1.5); /*Aumenta a escala das siglas para 1,5 vezes o tamanho original quando o mouse está sobre elas.*/
     z-index: 10; /*Eleva o z-index das siglas para 10, garantindo que elas fiquem acima de outros elementos*/
 }
 
 /* :after para Mostrar o Nome Completo do Estado */
-.estado-sudeste::after {
+.estado-sudeste::after,
+.estado-sul::after,
+.estado-centro-oeste::after,
+.estado-norte::after {
     content: attr(data-name); /*Utiliza o valor do atributo data-nome como conteúdo do pseudo-elemento*/
     position: absolute;
     top: 100%;
@@ -50,10 +91,12 @@
 }
 
 /* Efeito de Hover para Mostrar o Nome Completo do Estado */
-.estado-sudeste:hover::after {
+.estado-sudeste:hover::after,
+.estado-sul:hover::after,
+.estado-centro-oeste:hover::after,
+.estado-norte:hover::after {
     opacity: 1; /*Define a opacidade como 1, tornando o pseudo-elemento visível quando o mouse está sobre a sigla.*/
 }
-
 
 /* Posições Específicas dos Estados */
 /* Sudeste */
@@ -77,4 +120,137 @@
 #MG {
     top: 395px;
     left: 550px;
+}
+
+/* Sul */
+#RS {
+    top: 580px;
+    left: 408px;
+}
+
+#SC {
+    top: 540px;
+    left: 463px;
+    padding: 2px;
+}
+
+#PR {
+    top: 495px;
+    left: 428px;
+}
+
+/* Centro-Oeste */
+#MS {
+    top: 425px;
+    left: 378px;
+}
+
+#GO {
+    top: 350px;
+    left: 460px;
+}
+
+#MT {
+    top: 300px;
+    left: 360px;
+}
+
+#DF {
+    top: 350px;
+    left: 498px;
+    padding: 1px;
+}
+
+/* Norte */
+#AM {
+    top: 150px;
+    left: 213px;
+}
+
+#RR { 
+    top: 43px;
+    left: 269px ;
+}
+
+#PA {
+    top: 157px;
+    left: 407px;
+}
+
+#TO {
+    top: 255px;
+    left: 485px;
+}
+
+#RO {
+    top: 255px;
+    left: 230px;
+}
+
+#AC {
+    top: 248px;
+    left: 128px;
+}
+
+#AP {
+    top: 55px;
+    left: 425px;
+}
+
+.legenda {
+    position: absolute;
+    top: 500px; /* Ajusta a posição da legenda */
+    left: 10px; /* Ajusta a posição da legenda */
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.legenda h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.legenda ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.legenda ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.legenda ul li span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.legenda .sudeste {
+    background-color: rgba(219, 58, 98, 0.7); /* Azul para Sudeste */
+}
+
+.legenda .nordeste {
+    background-color: rgba(18, 148, 35, 0.7); /* Vermelho para Nordeste */
+}
+
+.legenda .norte {
+    background-color: rgba(18, 148, 35, 0.7); /* Verde para Norte */
+}
+
+.legenda .sul {
+    background-color: rgba(241, 104, 24, 0.7); /* Verde para Norte */
+}
+
+.legenda .centro-oeste {
+    background-color: rgba(90, 38, 235, 0.7); /* Verde para Norte */
 }

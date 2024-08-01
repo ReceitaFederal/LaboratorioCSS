@@ -16,6 +16,7 @@
     transition: transform 0.3s ease, filter 0.3s ease;
     background: #fff;
     filter: blur(2px);
+    cursor: pointer;
 }
 
 .card:hover { 
